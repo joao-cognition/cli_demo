@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Header } from "@/components/layout/Header";
 import { TrafficChart } from "@/components/analytics/TrafficChart";
 import { EndpointTable } from "@/components/analytics/EndpointTable";
@@ -10,7 +11,7 @@ import { formatNumber, formatBytes } from "@/lib/utils";
 // TODO: add geographic distribution map for requests
 // TODO: add comparison mode (current vs previous period)
 export default function AnalyticsPage() {
-  const trafficData = generateTrafficData();
+  const [trafficData] = useState(() => generateTrafficData());
   const totalRequests = trafficData.reduce((sum, d) => sum + d.requests, 0);
   const totalErrors = trafficData.reduce((sum, d) => sum + d.errors, 0);
   const avgBandwidth =

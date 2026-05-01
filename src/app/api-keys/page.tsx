@@ -32,9 +32,13 @@ export default function ApiKeysPage() {
   };
 
   const copyToClipboard = async (key: string, id: string) => {
-    await navigator.clipboard.writeText(key);
-    setCopiedId(id);
-    setTimeout(() => setCopiedId(null), 2000);
+    try {
+      await navigator.clipboard.writeText(key);
+      setCopiedId(id);
+      setTimeout(() => setCopiedId(null), 2000);
+    } catch {
+      // Clipboard access denied or unavailable
+    }
   };
 
   const statusConfig = {
