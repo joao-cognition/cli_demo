@@ -5,7 +5,7 @@ import { TrafficChart } from "@/components/analytics/TrafficChart";
 import { EndpointTable } from "@/components/analytics/EndpointTable";
 import { Card, CardHeader, CardContent } from "@/components/ui/Card";
 import { endpoints, generateTrafficData } from "@/lib/mock-data";
-import { formatNumber } from "@/lib/utils";
+import { formatNumber, formatBytes } from "@/lib/utils";
 
 // TODO: add geographic distribution map for requests
 // TODO: add comparison mode (current vs previous period)
@@ -46,7 +46,7 @@ export default function AnalyticsPage() {
             <CardHeader>Avg Bandwidth</CardHeader>
             <CardContent>
               <p className="text-3xl font-bold tabular-nums text-cyan-400">
-                {formatNumber(avgBandwidth)} req/h
+                {formatBytes(avgBandwidth)}/h
               </p>
             </CardContent>
           </Card>

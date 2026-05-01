@@ -67,7 +67,7 @@ export function generateSparkline(length: number, min: number, max: number): num
   for (let i = 0; i < length; i++) {
     value += (Math.random() - 0.48) * (max - min) * 0.15;
     value = Math.max(min, Math.min(max, value));
-    data.push(Math.round(value));
+    data.push(parseFloat(value.toFixed(2)));
   }
 
   return data;
