@@ -27,6 +27,7 @@ export const metrics: Metric[] = [
     previousValue: 47,
     unit: "ms",
     trend: "down",
+    lowerIsBetter: true,
     sparkline: generateSparkline(20, 30, 60),
   },
   {
@@ -36,6 +37,7 @@ export const metrics: Metric[] = [
     previousValue: 0.18,
     unit: "%",
     trend: "down",
+    lowerIsBetter: true,
     sparkline: generateSparkline(20, 0, 1),
   },
   {
@@ -63,6 +65,7 @@ export const metrics: Metric[] = [
     previousValue: 71.2,
     unit: "%",
     trend: "down",
+    lowerIsBetter: true,
     sparkline: generateSparkline(20, 50, 85),
   },
 ];

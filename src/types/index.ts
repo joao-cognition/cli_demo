@@ -6,6 +6,7 @@ export interface Metric {
   unit: string;
   trend: "up" | "down" | "stable";
   sparkline: number[];
+  lowerIsBetter?: boolean;
 }
 
 export interface ServiceStatus {

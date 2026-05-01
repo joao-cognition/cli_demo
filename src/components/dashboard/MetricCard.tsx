@@ -12,9 +12,9 @@ interface MetricCardProps {
 
 export function MetricCard({ metric }: MetricCardProps) {
   const change = calculatePercentChange(metric.value, metric.previousValue);
-  const isPositiveTrend =
-    (metric.id === "error-rate" && metric.trend === "down") ||
-    (metric.id !== "error-rate" && metric.trend === "up");
+  const isPositiveTrend = metric.lowerIsBetter
+    ? metric.trend === "down"
+    : metric.trend === "up";
 
   return (
     <Card className="group relative overflow-hidden transition-all duration-300 hover:border-white/[0.12]">
