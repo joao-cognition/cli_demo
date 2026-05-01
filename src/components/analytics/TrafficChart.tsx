@@ -11,11 +11,14 @@ import {
   Legend,
 } from "recharts";
 import { Card, CardHeader, CardContent } from "@/components/ui/Card";
-import { generateTrafficData } from "@/lib/mock-data";
+import type { TrafficData } from "@/types";
+
+interface TrafficChartProps {
+  data: TrafficData[];
+}
 
 // TODO: add time range selector (1h, 6h, 24h, 7d, 30d)
-export function TrafficChart() {
-  const data = generateTrafficData();
+export function TrafficChart({ data }: TrafficChartProps) {
 
   return (
     <Card glow>

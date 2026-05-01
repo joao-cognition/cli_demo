@@ -52,7 +52,7 @@ export default function AnalyticsPage() {
           </Card>
         </div>
 
-        <TrafficChart />
+        <TrafficChart data={trafficData} />
         <EndpointTable endpoints={endpoints} />
       </div>
     </div>
